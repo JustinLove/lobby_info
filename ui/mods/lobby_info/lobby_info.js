@@ -30,6 +30,13 @@
   }
 
   model.liSubmitLobbyInfo = function() {
-    console.log(model.liLobbyInfo())
+    var info = model.liLobbyInfo()
+    console.log(info)
+    $.ajax({
+      type: 'PUT',
+      url: 'http://localhost:3000/games/'+info.id,
+      data: JSON.stringify(info),
+      contentType: 'application/json',
+    })
   }
 })()
