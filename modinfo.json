@@ -11,10 +11,15 @@
   "priority": 100,
   "scenes": {
     "new_game": [
-      "coui://ui/mods/lobby_info/new_game.js"
+      "coui://ui/mods/lobby_info/new_game.js",
+      "coui://ui/mods/lobby_info/lobby_info.js"
     ],
     "live_game": [
-      "coui://ui/mods/lobby_info/live_game.js"
+      "coui://ui/mods/lobby_info/live_game.js",
+      "coui://ui/mods/lobby_info/lobby_info.js"
+    ],
+    "settings": [
+      "coui://ui/mods/lobby_info/lobby_info.js"
     ]
   },
   "signature": "not yet implemented",
