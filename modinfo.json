@@ -1,0 +1,23 @@
+{
+  "author": "wondible",
+  "build": "94684",
+  "category": ["lobby", "titans"],
+  "context": "client",
+  "date": "2016/07/22",
+  "description": "Push player and planet names to a server",
+  "display_name": "Lobby Info",
+  "forum": null,
+  "identifier": "com.wondible.pa.lobby_info",
+  "priority": 100,
+  "scenes": {
+    "new_game": [
+      "coui://ui/mods/lobby_info/new_game.js"
+    ],
+    "live_game": [
+      "coui://ui/mods/lobby_info/live_game.js"
+    ]
+  },
+  "signature": "not yet implemented",
+  "version": "0.1.0"
+}
+
