@@ -20,7 +20,7 @@
   api.Panel.message('', 'inputmap.reload');
 
   model.liLobbyInfo = function() {
-    var name = model.gameName()
+    var name = model.gameName() || ''
     return {
       name: name,
       id: name.replace(/\W/g, '').toLowerCase(),
@@ -29,14 +29,30 @@
     }
   }
 
-  model.liSubmitLobbyInfo = function() {
+  model.liMessage = function(callback) {
     var info = model.liLobbyInfo()
     console.log(info)
-    $.ajax({
-      type: 'PUT',
-      url: 'http://localhost:3000/games/'+info.id,
-      data: JSON.stringify(info),
-      contentType: 'application/json',
+    var sinfo = JSON.stringify(info)
+    nacl_factory.instantiate(function(nacl) {
+      var binfo = nacl.encode_utf8(sinfo)
+      var signed = nacl.crypto_sign(binfo, nacl.from_hex(model.liSecretKey))
+      callback({
+        id: info.id,
+        data: nacl.to_hex(signed),
+      })
+    })
+  }
+
+  model.liSubmitLobbyInfo = function() {
+    model.liMessage(function(message) {
+      console.log(message)
+      $.ajax({
+        type: 'PUT',
+        url: 'http://localhost:3000/games/'+message.id,
+        //url: 'https://ablegamers2016.herokuapp.com/games/'+info.id,
+        data: JSON.stringify(message),
+        contentType: 'application/json',
+      })
     })
   }
 })()
