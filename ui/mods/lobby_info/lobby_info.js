@@ -48,7 +48,7 @@
       console.log(message)
       $.ajax({
         type: 'PUT',
-        url: 'http://localhost:3000/games/'+message.id,
+        url: 'http://localhost:5000/games/'+message.id,
         //url: 'https://ablegamers2016.herokuapp.com/games/'+info.id,
         data: JSON.stringify(message),
         contentType: 'application/json',
