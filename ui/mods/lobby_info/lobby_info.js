@@ -21,9 +21,10 @@
 
   model.liLobbyInfo = function() {
     var name = model.gameName() || ''
+    var id = api.settings.isSet('ui', 'donation_panel_current_match', true) || name.replace(/\W/g, '').toLowerCase()
     return {
       name: name,
-      id: name.replace(/\W/g, '').toLowerCase(),
+      id: id,
       players: model.liPlayerNames(),
       planets: model.liPlanetNames()
     }
