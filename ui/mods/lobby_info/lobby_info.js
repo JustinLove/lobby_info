@@ -50,7 +50,7 @@
       $.ajax({
         type: 'PUT',
         //url: 'http://localhost:5000/games/'+message.id,
-        url: 'https://ablegamers2016.herokuapp.com/games/'+message.id,
+        url: 'https://ablegamers2017.herokuapp.com/games/'+message.id,
         data: JSON.stringify(message),
         contentType: 'application/json',
       })

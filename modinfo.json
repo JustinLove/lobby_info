@@ -3,7 +3,7 @@
   "build": "94684",
   "category": ["lobby", "titans"],
   "context": "client",
-  "date": "2016/07/22",
+  "date": "2017/11/25",
   "description": "Push player and planet names to a server",
   "display_name": "Lobby Info",
   "forum": null,
@@ -27,6 +27,6 @@
     ]
   },
   "signature": "not yet implemented",
-  "version": "0.1.0"
+  "version": "0.2.0"
 }
 
