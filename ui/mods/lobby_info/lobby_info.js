@@ -21,7 +21,7 @@
 
   model.liLobbyInfo = function() {
     var name = model.gameName() || ''
-    var id = api.settings.isSet('ui', 'donation_panel_current_match', true) || name.replace(/\W/g, '').toLowerCase()
+    var id = api.settings.isSet('ui', 'donation_data_current_match', true) || name.replace(/\W/g, '').toLowerCase()
     return {
       name: name,
       id: id,
@@ -50,7 +50,7 @@
       $.ajax({
         type: 'PUT',
         //url: 'http://localhost:5000/games/'+message.id,
-        url: 'https://ablegamers2017.herokuapp.com/games/'+message.id,
+        url: 'https://ablegamers2018.herokuapp.com/games/'+message.id,
         data: JSON.stringify(message),
         contentType: 'application/json',
       })
