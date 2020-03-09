@@ -3,7 +3,10 @@
   "build": "94684",
   "category": ["lobby", "titans"],
   "context": "client",
-  "date": "2017/11/25",
+  "date": "2020/03/09",
+  "dependencies": [
+    "com.wondible.pa.donation_data"
+  ],
   "description": "Push player and planet names to a server",
   "display_name": "Lobby Info",
   "forum": null,
@@ -27,6 +30,6 @@
     ]
   },
   "signature": "not yet implemented",
-  "version": "0.2.0"
+  "version": "0.3.0"
 }
 
